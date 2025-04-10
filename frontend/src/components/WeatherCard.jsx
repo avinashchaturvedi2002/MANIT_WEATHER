@@ -93,7 +93,7 @@ export default function WeatherCard(){
       async function fetchWeather() {
         try {
           const response = await axios.get(
-            `httpss://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=${WEATHER_API_KEY}`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=${WEATHER_API_KEY}`
           );
           setWeatherData(response.data);
         } catch (error) {
@@ -111,7 +111,7 @@ export default function WeatherCard(){
 useEffect(() => {
   if (weatherData) {
     const icon = weatherData.weather[0].icon;
-    setIconUrl(`httpss://openweathermap.org/img/wn/${icon}@2x.png`);
+    setIconUrl(`https://openweathermap.org/img/wn/${icon}@2x.png`);
     console.log(weatherData);
   }
 }, [weatherData]);
@@ -125,7 +125,7 @@ useEffect(() => {
        
         console.log(cityName);
         const unsplashResponse = await axios.get(
-          `httpss://api.unsplash.com/search/photos?page=1&query=${weatherData.name}&client_id=${UNSPLASH_API_KEY}`
+          `https://api.unsplash.com/search/photos?page=1&query=${weatherData.name}&client_id=${UNSPLASH_API_KEY}`
         );
   
         const firstPhoto = unsplashResponse.data.results[0];

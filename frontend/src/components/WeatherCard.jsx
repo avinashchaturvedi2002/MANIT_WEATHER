@@ -144,7 +144,7 @@ useEffect(() => {
   useEffect(()=>{
     if(weatherData)
     {
-      const message = `The current temperature in ${city} is ${weatherData.main.temp} degrees Celsius with ${weatherData.weather[0].description}.`;
+      const message = `The current temperature in ${weatherData.name} is ${weatherData.main.temp} degrees Celsius with ${weatherData.weather[0].description}.`;
       console.log("speaking");
       const utterance = new SpeechSynthesisUtterance(message);
       speechSynthesis.cancel(); // Stop any previous utterances

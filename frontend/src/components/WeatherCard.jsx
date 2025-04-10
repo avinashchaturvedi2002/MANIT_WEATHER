@@ -161,7 +161,7 @@ useEffect(() => {
             <img
               src={cityPhoto}
               alt="City"
-              className="w-full h-full fixed object-cover z-0"
+              className="absolute top-0 left-0 w-screen h-screen object-cover z-0"
             />
           )}
   

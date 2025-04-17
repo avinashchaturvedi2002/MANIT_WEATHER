@@ -9,6 +9,11 @@ export default function Login() {
   }
   function handleSignIn(){
     const usersdata = JSON.parse( localStorage.getItem('users') );
+    if(!usersdata)
+    {
+      alert("No users found!!")
+      return;
+    }
     console.log(usersdata);
     const finduser=usersdata.find((item)=>{return item.email==credentials.email})
     if(!finduser)
